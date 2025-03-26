@@ -1,4 +1,4 @@
-package kpi.zakrevskyi.lab1;
+package kpi.zakrevskyi.labs;
 
 import android.content.Context;
 

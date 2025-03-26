@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">lab1</string>
+    <string name="app_name">labs</string>
+    <string name="small">Маленька</string>
+    <string name="medium">Середня</string>
+    <string name="huge">Велика</string>
+    <string name="OK">OK</string>
+    <string name="peperoni">Пепероні</string>
+    <string name="margarita">Маргарита</string>
+    <string name="hint">Введіть адресу</string>
+    <string name="choice">Оберіть тип піци:</string>
+    <string name="close">Закрити</string>
 </resources>

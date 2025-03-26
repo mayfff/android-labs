@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="414dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingTop="8dp"
+            android:text="@string/choice"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMargarita"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/margarita"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPepperoni"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/peperoni"
+            app:layout_constraintBottom_toTopOf="@+id/radioSmallPepperoni"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxMargarita"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.076"
+            tools:ignore="NotSibling" />
+
+        <Button
+            android:id="@+id/buttonOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="312dp"
+            android:text="@string/OK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.077" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupMargaritaSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/buttonOrder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toEndOf="@+id/radioGroupPepperoniSize"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxMargarita"
+            app:layout_constraintVertical_bias="0.383">
+
+            <RadioButton
+                android:id="@+id/radioSmallMargarita"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/small"
+                tools:layout_editor_absoluteX="280dp"
+                tools:layout_editor_absoluteY="273dp" />
+
+            <RadioButton
+                android:id="@+id/radioMediumMargarita"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/medium"
+                tools:layout_editor_absoluteX="280dp"
+                tools:layout_editor_absoluteY="341dp" />
+
+            <RadioButton
+                android:id="@+id/radioLargeMargarita"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/huge"
+                tools:layout_editor_absoluteX="280dp"
+                tools:layout_editor_absoluteY="407dp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroupPepperoniSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/buttonOrder"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxMargarita"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxPepperoni"
+            app:layout_constraintVertical_bias="0.385">
+
+            <RadioButton
+                android:id="@+id/radioSmallPepperoni"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/small"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="273dp" />
+
+            <RadioButton
+                android:id="@+id/radioMediumPepperoni"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/medium"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="341dp" />
+
+            <RadioButton
+                android:id="@+id/radioLargePepperoni"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/huge"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="407dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewOrderIssues"
+            android:layout_width="321dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:paddingStart="10dp"
+            android:paddingTop="15dp"
+            android:text=""
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonOrder"
+            tools:ignore="RtlSymmetry" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
