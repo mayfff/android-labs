@@ -53,7 +53,6 @@ public class OrdersActivity extends AppCompatActivity {
 
             writeTableHeader();
             while ((line = br.readLine()) != null) {
-                Log.d("test2", line);
                 String[] parts = line.split(";");
                 addTableRow(parts[0], parts[1], parts[2]);
             }

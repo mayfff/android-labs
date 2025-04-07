@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     private void saveToFile(String info, String margaritaSize, String peperoniSize) {
         String filename = "orders.txt";
         String data = info + ";" + margaritaSize + ";" + peperoniSize + "\n";
-        Log.d("test", data);
 
         try (FileOutputStream fos = openFileOutput(filename, Context.MODE_APPEND)) {
             fos.write(data.getBytes());
