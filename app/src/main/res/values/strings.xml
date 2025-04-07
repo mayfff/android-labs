@@ -9,4 +9,7 @@
     <string name="hint">Введіть адресу</string>
     <string name="choice">Оберіть тип піци:</string>
     <string name="close">Закрити</string>
+    <string name="orders">Список замовлень</string>
+    <string name="clear">Очистити</string>
+    <string name="back">Повернутись</string>
 </resources>

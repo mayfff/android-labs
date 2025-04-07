@@ -1,4 +1,4 @@
-package kpi.zakrevskyi.labs;
+package kpi.zakrevskyi.labs.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import kpi.zakrevskyi.labs.MainActivity;
+import kpi.zakrevskyi.labs.R;
 
 
 public class OutputFragment extends Fragment {

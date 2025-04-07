@@ -1,4 +1,4 @@
-package kpi.zakrevskyi.labs;
+package kpi.zakrevskyi.labs.fragments;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import kpi.zakrevskyi.labs.MainActivity;
+import kpi.zakrevskyi.labs.R;
 
 
 public class InputFragment extends Fragment {
@@ -23,6 +25,8 @@ public class InputFragment extends Fragment {
     private CheckBox checkBoxMargarita, checkBoxPepperoni;
     private RadioGroup radioGroupMargaritaSize, radioGroupPepperoniSize;
     private Button buttonOrder;
+
+    private Button buttonOrdersList;
 
     @Nullable
     @Override
@@ -41,17 +45,18 @@ public class InputFragment extends Fragment {
         radioGroupMargaritaSize = view.findViewById(R.id.radioGroupMargaritaSize);
         radioGroupPepperoniSize = view.findViewById(R.id.radioGroupPepperoniSize);
         buttonOrder = view.findViewById(R.id.buttonOrder);
+        buttonOrdersList = view.findViewById(R.id.buttonOrdersList);
 
         buttonOrder.setOnClickListener(v -> {
             String info = editTextInfo.getText().toString();
-            StringBuilder orderDetails = new StringBuilder();
+            StringBuilder order = new StringBuilder();
+            String margaritaSize = "Відсутня";
+            String peperoniSize = "Відсутня";
 
             if (info.isEmpty()) {
                 textViewOrderIssues.setText("Будь ласка, введіть інформацію про замовлення.");
                 return;
             }
-
-            orderDetails.append("Інформація про замовлення:\n").append(info).append("\n");
 
             if (!checkBoxPepperoni.isChecked() && !checkBoxMargarita.isChecked()) {
                 textViewOrderIssues.setText("Будь ласка, оберіть тип піци.");
@@ -59,30 +64,33 @@ public class InputFragment extends Fragment {
             }
 
             if (checkBoxMargarita.isChecked()) {
-                orderDetails.append("Тип піци: Маргарита. ");
+                order.append("Тип піци: Маргарита. ");
                 int margaritaSelectedSizeId = radioGroupMargaritaSize.getCheckedRadioButtonId();
                 if (margaritaSelectedSizeId == -1) {
                     textViewOrderIssues.setText("Будь ласка, оберіть розмір для маргарити.");
                     return;
                 }
                 RadioButton margaritaSelectedSize = view.findViewById(margaritaSelectedSizeId);
-                orderDetails.append("Розмір: ").append(margaritaSelectedSize.getText().toString()).append("\n");
+                margaritaSize = margaritaSelectedSize.getText().toString();
+                order.append("Розмір: ").append(margaritaSize).append("\n");
             }
 
             if (checkBoxPepperoni.isChecked()) {
-                orderDetails.append("Тип піци: Пепероні. ");
+                order.append("Тип піци: Пепероні. ");
                 int peperoniSelectedSizeId = radioGroupPepperoniSize.getCheckedRadioButtonId();
                 if (peperoniSelectedSizeId == -1) {
                     textViewOrderIssues.setText("Будь ласка, оберіть розмір для пепероні.");
                     return;
                 }
                 RadioButton peperoniSelectedSize = view.findViewById(peperoniSelectedSizeId);
-                orderDetails.append("Розмір: ").append(peperoniSelectedSize.getText().toString()).append("\n");
+                peperoniSize = peperoniSelectedSize.getText().toString();
+                order.append("Розмір: ").append(peperoniSize).append("\n");
             }
 
-            orderDetails.append("Дякуємо за замовлення!");
-            ((MainActivity) getActivity()).onResult(orderDetails.toString());
+            order.append("Дякуємо за замовлення!");
+            ((MainActivity) getActivity()).onResult(order.toString(), info, margaritaSize, peperoniSize);
         });
 
+        buttonOrdersList.setOnClickListener(v -> ((MainActivity) getActivity()).openOrdersActivity());
     }
 }
