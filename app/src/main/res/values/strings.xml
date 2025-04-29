@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lab4</string>
+    <string name="audio">Аудіо</string>
+    <string name="video">Відео</string>
+    <string name="select_source">Оберіть середовище</string>
+    <string name="not_chosen">Не обрано</string>
+    <string name="audio_not_found">Аудіо не знайдені</string>
+    <string name="video_not_found">Відео не знайдені</string>
+    <string name="title">Назва</string>
+    <string name="author">Автор</string>
+    <string name="time">0:00</string>
+    <string name="enter_url">Введіть посилання</string>
+    <string name="ok">Ок</string>
+    <string-array name="source_options">
+        <item>Внутрішнє сховище</item>
+        <item>Зовнішнє сховище</item>
+        <item>З інтернету</item>
+    </string-array>
+</resources>

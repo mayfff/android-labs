@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/audioView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    tools:context=".fragments.SpinnerFragment">
+
+    <TextView
+        android:id="@+id/storage_choose"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/select_source"
+        android:textSize="15sp"
+        android:textColor="@color/white"/>
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/file_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_spinner"
+        android:gravity="center"
+        android:hint="@string/not_chosen"
+        android:padding="10dp"
+        android:textColor="#9BFDA8"
+        android:textColorHint="#9BFDA8"
+        android:textSize="14sp"
+        app:spinner_arrow_gravity="end"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_divider_show="false"
+        app:spinner_item_array="@array/source_options"
+        app:spinner_item_height="60dp"
+        app:spinner_popup_animation="dropdown"
+        app:spinner_popup_background="@drawable/spinner_selected_item"
+        app:spinner_popup_elevation="14dp"
+        app:spinner_selected_item_background="@drawable/spinner_selected_item" />
+
+
+</LinearLayout>
